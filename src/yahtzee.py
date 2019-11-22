@@ -57,38 +57,52 @@ def scoring():
             return
         else:
             option = input("Unrecognized command. Please enter 'back' to return to the menu: ")
+            
+
+def check_score():
+    # TODO - write function to check the score
+    return
 
 
 # Function that is playing the game of Yahtzee
 def game():
-    scoreCats = ["Three of a Kind", "Four of a Kind", "Small Straight", "Large Straight", "Full House", "Yahtzee",
-                  "Chance"]
-    setCats = ["Set of 1's", "Set of 2's", "Set of 3's", "Set of 4's", "Set of 5's", ""]
+    scoreCats = ["Three of a Kind:", "Four of a Kind:", "Small Straight:", "Large Straight:", "Full House:", "Yahtzee:",
+                  "Chance:"]
+    setCats = ["Set of 1's:", "Set of 2's:", "Set of 3's:", "Set of 4's:", "Set of 5's:", "Set of 6's:"]
     results = [] * 5
+    totalScore = 0
     option = '0'
     roundNum = 1
     turn = 1
+    rollResults = [] * 5
+    dice = 6
+    
     while roundNum < 14:
-        # TODO - write game function
-        pass
+        if rounNum == 1:
+            rollResults = roll(dice)
+        else:
+            option = input("Roll again (y/n)?: ")
+        
+        # Printing roll results
+        print("Rolled:",end=" ")
+        for i in rollResults:
+            print(i, end=" ")
+        
+        keeping = input("Which dice would you like to keep? Please seperate your numbers by commas (i.e. 3, 3, 3): ")
+        dice = keeping.split(", ")
+        
+        return
 
 
 # Function that will roll a given amount of dice
-def roll():
-    results = [random.randint(1, 6) for i in range(5)]
+def roll(x):
+    results = [random.randint(1, 6) for i in range(x)]
     return results
-
-
-# Function that will roll a Yahtzee with a "special" input.
-def rick_rolled():
-    rng = random.randint(1, 6)
-    temp = [rng] * 5
-    return temp
 
 
 def main():
     option = '0'
-    while option != '4':
+    while option != '5':
         print("Welcome to Yahtzee!")
         main_menu()
         option = input("Select Option: ")
@@ -103,7 +117,10 @@ def main():
         elif option == '3':  # Scoring
             scoring()
             continue
-        elif option == '4':  # Quit
+        elif option == '4':  # How to Play
+            tutorial()
+            continue
+        elif option == '5':  # Quit
             print("Thanks for playing!")
             continue
         else:
