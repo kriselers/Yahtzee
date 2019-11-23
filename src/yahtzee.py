@@ -89,7 +89,8 @@ def game():
             print(i, end=" ")
         
         keeping = input("Which dice would you like to keep? Please seperate your numbers by commas (i.e. 3, 3, 3): ")
-        dice = keeping.split(", ")
+        
+        # TODO - Write the rest of the game code
         
         return
 
