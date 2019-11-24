@@ -1,5 +1,5 @@
 # Yahtzee
 
-Yahtzee game for ENGR 102 at Texas A&M University
+Fall 2019
 
 This is a console version of Yahtzee coded in Python
