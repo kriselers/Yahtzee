@@ -97,9 +97,9 @@ def calculate_round_score(card, cardScore, roundRoll, x):
     for i in range(5):
         dice[roundRoll[i]] = dice[roundRoll[i]] + 1
     while needInput:
+        index = x - 1
         if 0 < x <= 6:
-            cardScore[x] = sum(roundRoll)
-            return cardScore
+            cardScore[index] = sum(roundRoll)
         elif 6 < x < 14:
             index = x - 7
             if x == 7:
