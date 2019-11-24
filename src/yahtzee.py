@@ -203,7 +203,6 @@ def game():
                     needInput = False
                 else:
                     dice -= blah
-                    print(dice)
                     if dice >= 0:
                         needInput = False
                     else:
